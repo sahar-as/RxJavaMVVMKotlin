@@ -9,7 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.saharapps.rxjavamvvmkotlin.R
 import ir.saharapps.rxjavamvvmkotlin.model.PostModel
-import org.w3c.dom.Text
+
+//design and implemented by Sahar Asadian
 
 class PostItemAdapter(var context: Context, var postList: MutableList<PostModel>) :
     RecyclerView.Adapter<PostItemAdapter.PostItemHolder>(){

@@ -1,18 +1,19 @@
-package ir.saharapps.rxjavamvvmkotlin
+package ir.saharapps.rxjavamvvmkotlin.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ir.saharapps.rxjavamvvmkotlin.R
 import ir.saharapps.rxjavamvvmkotlin.adapter.PostItemAdapter
 import ir.saharapps.rxjavamvvmkotlin.viewmodel.ApplicationViewModel
 
 class MainActivity : AppCompatActivity() {
+    //design and implemented by Sahar Asadian
 
     var applicationViewModel: ApplicationViewModel? = null
 
@@ -29,7 +30,6 @@ class MainActivity : AppCompatActivity() {
 
         applicationViewModel = ViewModelProvider(this)[ApplicationViewModel::class.java]
         applicationViewModel!!.getPostList.observe(this) { postModles ->
-            Log.d("MainActivity", "onCreate: 222222222222222222: " + postModles.size)
             adapter = PostItemAdapter(this, postModles)
             adapter!!.notifyDataSetChanged()
             recyclerView!!.adapter = adapter
@@ -37,3 +37,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+//design and implemented by Sahar Asadian

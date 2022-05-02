@@ -1,12 +1,9 @@
 package ir.saharapps.rxjavamvvmkotlin.repository
 
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import io.reactivex.schedulers.Schedulers.io
 import ir.saharapps.rxjavamvvmkotlin.model.PostModel
 import ir.saharapps.rxjavamvvmkotlin.network.APIData
 import ir.saharapps.rxjavamvvmkotlin.network.APIServices
@@ -28,5 +25,4 @@ class MainRepository {
                 })
             return data
         }
-
 }
