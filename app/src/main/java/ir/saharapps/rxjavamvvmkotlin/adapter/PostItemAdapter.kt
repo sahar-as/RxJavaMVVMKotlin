@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.saharapps.rxjavamvvmkotlin.R
 import ir.saharapps.rxjavamvvmkotlin.model.PostModel
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.post_item.*
 
 //design and implemented by Sahar Asadian
 
@@ -22,25 +24,17 @@ class PostItemAdapter(var context: Context, var postList: MutableList<PostModel>
     }
 
     override fun onBindViewHolder(holder: PostItemHolder, position: Int) {
-        holder.txtTitle.text = postList[position].title.toString()
-        holder.txtBody.text = StringBuilder(postList[position].body!!.substring(0,20)).append("...").toString()
-        holder.txtUserId.text = postList[position].userId.toString()
+        holder.txt_postItem_Title.text = postList[position].title.toString()
+        holder.txt_postItem_body.text = StringBuilder(postList[position].body!!.substring(0,20)).append("...").toString()
+        holder.txt_postItem_userID.text = postList[position].userId.toString()
     }
 
     override fun getItemCount(): Int {
         return postList.size
     }
 
-    inner class PostItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-            var txtTitle: TextView
-            var txtBody: TextView
-            var txtUserId: TextView
-
-            init {
-                txtTitle = itemView.findViewById(R.id.txt_postItem_Title)
-                txtBody = itemView.findViewById(R.id.txt_postItem_body)
-                txtUserId = itemView.findViewById(R.id.txt_postItem_userID)
-            }
-        }
+    //add experimental = ture in gradle now you can use this extension to remove findViewById
+    inner class PostItemHolder(override val containerView: View) :
+        RecyclerView.ViewHolder(containerView), LayoutContainer
 
 }
