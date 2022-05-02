@@ -1,6 +1,7 @@
 package ir.saharapps.rxjavamvvmkotlin.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ class PostItemAdapter(var context: Context, var postList: MutableList<PostModel>
     RecyclerView.Adapter<PostItemAdapter.PostItemHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostItemHolder {
+        Log.d("TAG", "onCreateViewHolder: 11111111111 " + getItemCount())
         var view : View = LayoutInflater.from(context).inflate(R.layout.post_item, parent, false)
         return PostItemHolder(view)
     }

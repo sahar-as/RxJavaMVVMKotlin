@@ -2,7 +2,5 @@
     <string name="app_name">RxJavaMVVMKotlin</string>
     <string name="txt_title">Title</string>
     <string name="txt_body">Body</string>
-    <string name="txt_body">Body</string>
-    <string name="txt_body">Body</string>
     <string name="txt_userId">User Id</string>
 </resources>
